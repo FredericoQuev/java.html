@@ -10,7 +10,7 @@ form.addEventListener("submit", (e) =>{
     const permitida = Number(form.inPermitida.value)
     const condutor = Number(form.inCondutor.value)
     let leve = permitida + (permitida * 0.2)
-
+    alert(permitida+condutor+leve)
     if(condutor <= permitida){
         resp.innerText = `Situação Sem Multa`
 
