@@ -1,23 +1,31 @@
-alert("ok")
 const form = document.querySelector("form")
-const resp = document.querySelector("h3")
+const resp = document.querySelector ("#outResp")
+const resp1 = document .querySelector ("#outResp1")
 
 //ouvinte
+form.addEventListener("submit",(e)=>{
 
-form.addEventListener("submit", (e) =>{
-    e.preventDefault()
+   e-preventDefault ()
 
-    const permitida = Number(form.inPermitida.value)
-    const condutor = Number(form.inCondutor.value)
-    let leve = permitida + (permitida * 0.2)
-    alert(permitida+condutor+leve)
-    if(condutor <= permitida){
-        resp.innerText = `Situação Sem Multa`
+     const ladoA = Number (form. inLadoA. value)
+     const ladoB = Number (form. inLadoB .value)
+     const lado = Number (form. inLadoC.value)
 
-    } else if (condutor <= leve) {
-        resp.innerText = `Situação: Multa Leve`
-
-    } else {
-        resp.innerText = `Situação Multa Grave`
+if ((ladoA > lado + ladoc) || (lado > ladoA + ladoc) || (ladoc > ladoA + ladoB)){
+alert ("Essas medidas não podem formar um triângulo. Um dos lados não pode ser maior que a soma dos outros dois.") 
+      form.inLadoA. focus ()
+      form. inLadoB. focus ()
+      form.inLadoc. focus ()
+      return
     }
+
+      resp.innerText = `Lados podem formar um triângulo`
+
+if (ladoA == lado && ladoA == ladoc){
+resp1. innerText - `Tipo: Equilátero`
+} else if((ladoA == lados) || (ladoA =- ladoc) || (ladoB == ladoc)){
+     respl. innerText = `Tipo: Isóceles`
+}else{
+resp1. innerText = `Tipo: Escaleno`
+}
 })
